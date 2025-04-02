@@ -1,0 +1,17 @@
+import subprocess
+
+# enter your mac 
+mac= input("enter the mac addres to change:")
+
+# Check input length instead of comparing with an integer
+if len(mac) > 1:
+    # Continue with the MAC address change
+    change_mac = subprocess.run(["macchnager", "-m", mac, "eth0"])
+    print("MAC address changed")
+    print(change_mac)
+else:
+    print("""Couldn't change the MAC address.
+Tips:
+1. Enter a valid MAC address.
+2. Close the program and restart the code editor.
+""")
